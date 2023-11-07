@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS Ships (
 CREATE TABLE IF NOT EXISTS StorageAreas (
 	storage_id INTEGER NOT NULL AUTO_INCREMENT,
 	capacity INTEGER NOT NULL,
-	address VARCHAR(100) NOT NULL,
+	address VARCHAR(20) NOT NULL,
 	PRIMARY KEY (storage_id),
 	UNIQUE (address),
 	CONSTRAINT capacityLimits

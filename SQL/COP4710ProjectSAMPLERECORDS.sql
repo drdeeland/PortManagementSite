@@ -20,16 +20,16 @@ INSERT INTO Ships(name) VALUES
 SELECT * FROM Ships;
 
 INSERT INTO StorageAreas(capacity, address) VALUES
-(34, "9312 NW eastern Blvd, Port Antigua, FL"),
-(36, "2345 NW western Blvd, Miami, FL"),
-(25, "9483 NW washington Blvd, Cocoa Beach, FL"),
-(36, "3843 NW licoln Blvd, San Diego, CA"),
-(34, "8493 NW kendal street, New York City, NY"),
-(36, "5321 NW galloway Road, Boston, MA"),
-(34, "3412 NW glennville street, Miami, FL"),
-(36, "2221 NW jackson street, Miami, FL"),
-(34, "9374 NW charles Blvd, Cocoa Beach, FL"),
-(36, "9237 NW james street, San Diego, CA");
+(34, "Row A"),
+(36, "Row B"),
+(25, "Row C"),
+(36, "Row D"),
+(34, "Row E"),
+(36, "Row F"),
+(34, "Row G"),
+(36, "Row H"),
+(34, "Row I"),
+(36, "Row J");
 
 SELECT * FROM StorageAreas;
 
