@@ -16,9 +16,72 @@
             <a class="active" href="../html/Container.html">Containers</a>
             <a href="../html/PortAdmin.html">Port Admin</a>
         </div>
-        <h1 id="title">Company Container Page</h1>
-        <div id="">
-
-        </div>
+        <section style="height:400px;">
+            <h1 style="height:30px; text-align: center;" id="title">Company Container Page</h1>
+            <div style="float:left; width:30%">
+                <form style="margin-left: 6%;">
+                    <label for="company">Company Name:</label><br>
+                    <input type="text" id="company" name="company">
+                    <br><br>
+                    <label for="sourceid">Source ID:</label><br>
+                    <input type="text" id="sourceid" name="sourceid">
+                    <p>
+                        <input type="radio" id="shipSource" name="source" Value="Ship">
+                        <label for="shipSource">Ship</label><br>
+                        <input type="radio" id="truckSource" name="source" Value="Truck">
+                        <label for="truckSource">Truck</label>
+                    </p>
+                    <label for="destinationid">Destination ID:</label><br>
+                    <input type="text" id="destinationid" name="destinationid">
+                    <p>
+                        <input type="radio" id="shipDestination" name="destination" Value="Ship">
+                        <label for="shipDestination">Ship</label><br>
+                        <input type="radio" id="truckDestination" name="destination" Value="Truck">
+                        <label for="truckDestination">Truck</label>
+                    </p>
+                    <label for="storageid">Storage ID:</label><br>
+                    <input type="text" id="storageid" name="storageid"><br><br>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+            <div style="float:right; width:37.5%; margin-left:3%; margin-right:6%">
+                <form>
+                    <label for="display; text-align:left">Enter company name to see their containers</label><br>
+                    <input type="text" id="display" name="display">
+                    <button>Submit</button>
+                    <br><br>
+                    <table id="containers">
+                        <tr>
+                            <th>Container ID</th>
+                            <th>Source ID</th>
+                            <th>Storage ID</th>
+                            <th>Destination ID</th>
+                            <th>Status</th>
+                        </tr>
+                        <tr>
+                            <td>Container: 1</td>
+                            <td>Ship: 1</td>
+                            <td>Storage: 2</td>
+                            <td>Truck: 3</td>
+                            <td>Source</td>
+                        </tr>
+                        <tr>
+                            <td>Container: 2</td>
+                            <td>Truck: 1</td>
+                            <td>Storage: 2</td>
+                            <td>Truck: 5</td>
+                            <td>Source</td>
+                        </tr>
+                        <tr>
+                            <td>Container: 3</td>
+                            <td>Ship: 1</td>
+                            <td>Storage: 2</td>
+                            <td>Ship: 2</td>
+                            <td>Source</td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </section>
     </body>
 </html>

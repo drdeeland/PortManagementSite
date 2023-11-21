@@ -25,3 +25,30 @@
     background-color: rgb(55, 124, 214);
     color: white;
   }
+
+body {
+  background-image:url('../images/Port.jpeg');
+  background-size: cover;
+}
+
+h1 {
+  height:30px;
+  font-size: 27px;
+}
+
+section {
+  background-color:#fcfcfc;
+  border-radius: 10px;
+  margin:auto;
+  width: 75%;
+}
+
+table {
+    width:100%;
+    border:1px solid #333;
+}
+
+td, th {
+    border: 1px solid #333;
+    text-align: center;
+}
