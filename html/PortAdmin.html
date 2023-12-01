@@ -16,9 +16,86 @@
             <a href="../html/Container.html">Containers</a>
             <a class="active" href="../html/PortAdmin.html">Port Admin</a>
         </div>
-        <h1 id="title">Port Admin Page</h1>
-        <div id="">
-
-        </div>
+        <section style="height:800px;">
+            <h1 style="height:30px; text-align: center;" id="title">Port Admin Page</h1>
+            <h2 style="text-align: center;">Ship Details</h2>
+            <form style="width:50%">
+                <div style="margin-left: 20%;">
+                <label for="shipID">Ship ID</label><br>
+                <input type="text" id="shipID" name="shipID"><br><br>
+                <input type="submit">
+                </div>
+            </form>
+            <br>
+            <table style="margin-left: 10%; width:75%">
+                <tr>
+                    <th>Ship ID</th>
+                    <th>Ship Name</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Big Ship</td>
+                </tr>
+            </table>
+            <h2 style="text-align: center;">Berth Overview</h2>
+            <table style="margin-left: 10%; width:75%">
+                <tr>
+                    <th>Berth ID</th>
+                    <th>Docked Ship ID</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>1</td>
+                </tr>
+            </table>
+            <h2 style="text-align: center;">Container Insights</h2>
+            <form style="width:50%">
+                <div style="margin-left: 20%;">
+                <label for="shipID">Container ID</label><br>
+                <input type="text" id="containerID" name="containerID"><br><br>
+                <input type="submit">
+                </div>
+            </form>
+            <br>
+            <table style="margin-left: 10%; width:75%">
+                <tr>
+                    <th>Container ID</th>
+                    <th>Company</th>
+                    <th>Source ID</th>
+                    <th>Storage ID</th>
+                    <th>Destination ID</th>
+                    <th>Location</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Adidas</td>
+                    <td>Ship: 1</td>
+                    <td>1</td>
+                    <td>Truck: 1</td>
+                    <td>Source</td>
+                </tr>
+            </table>
+            <h2 style="text-align: center;">Truck Information</h2>
+            <form style="width:50%">
+                <div style="margin-left: 20%;">
+                <label for="truckID">Truck ID</label><br>
+                <input type="text" id="truckID" name="truckID"><br><br>
+                <input type="submit">
+                </div>
+            </form>
+            <br>
+            <table style="margin-left: 10%; width:75%">
+                <tr>
+                    <th>Truck ID</th>
+                    <th>License Plate</th>
+                    <th>Storage Location</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>ABC123</td>
+                    <td>1</td>
+                </tr>
+            </table>
+        </section>
     </body>
 </html>

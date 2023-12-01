@@ -33,47 +33,26 @@ INSERT INTO StorageAreas(capacity, address) VALUES
 
 SELECT * FROM StorageAreas;
 
-INSERT INTO Trucks(license) VALUES
-('ABC123'),
-('ABC234'),
-('ABC345'),
-('ABC456'),
-('ABC567'),
-('ABC678'),
-('ABC789'),
-('BCD123'),
-('BCD234'),
-('BCD345');
-
-SELECT * FROM Trucks;
-
-INSERT INTO Containers(company) VALUES 
-("Nike"),
-("Addidas"),
-("Facebook"),
-("Google"),
-("Samsung"),
-("Tmobile"),
-("Tesla"),
-("NASA"),
-("SpaceEx"),
-("Ford");
-
-SELECT * FROM Containers;
-
 INSERT INTO Docked_At(berth_id, ship_id) VALUES
 (1, 1),
 (2, 2);
 
 SELECT * FROM Docked_At;
 
-INSERT INTO Location VALUES
-(1, 1, NULL, NULL, 1, 1, 'Storage'),
-(2, NULL, 1, 1, NULL, 1, 'Source');
+INSERT INTO Trucks(license, storage_id) VALUES 
+('ABC123', 1),
+('ABC234', 2),
+('ABC345', 3),
+('ABC456', 4),
+('ABC567', 5),
+('ABC678', 6),
+('ABC789', 7),
+('BCD123', 8),
+('BCD234', 9),
+('BCD345', 1);
 
-SELECT * FROM Location;
+INSERT INTO Container_Location VALUES
+(1, 'Adidas', 1, NULL, NULL, 1, 1, 'Storage'),
+(2, 'Adidas', NULL, 1, 1, NULL, 1, 'Source');
 
-INSERT INTO Located_At(storage_id, truck_id) VALUES
-(1, 1);
-
-SELECT * FROM Located_At;
+SELECT * FROM Container_Location;

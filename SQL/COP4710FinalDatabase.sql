@@ -28,21 +28,6 @@ CREATE TABLE IF NOT EXISTS StorageAreas (
 		CHECK (capacity >= 0 AND capacity <= 50)
 );
 
-# Contains all registered trucks
-CREATE TABLE IF NOT EXISTS Trucks (
-	truck_id INTEGER NOT NULL AUTO_INCREMENT,
-	license VARCHAR(8) NOT NULL,
-	PRIMARY KEY (truck_id),
-	UNIQUE (license)
-);
-
-# Contains all registered containers
-CREATE TABLE IF NOT EXISTS Containers (
-	container_id INTEGER NOT NULL AUTO_INCREMENT,
-    company VARCHAR(50),
-    PRIMARY KEY (container_id)
-);
-
 # Relational Tables
 # Table for ships docked at berths
 CREATE TABLE IF NOT EXISTS Docked_At (
@@ -56,9 +41,20 @@ CREATE TABLE IF NOT EXISTS Docked_At (
     UNIQUE (ship_id)
 );
 
+# Table for tracking what storage area a truck is at
+CREATE TABLE IF NOT EXISTS Trucks (
+	truck_id INTEGER NOT NULL AUTO_INCREMENT,
+    license VARCHAR(8) NOT NULL,
+	storage_id INTEGER,
+    PRIMARY KEY (truck_id),
+    FOREIGN KEY (storage_id) REFERENCES StorageAreas(storage_id),
+    UNIQUE (license)
+);
+
 # Table for tracking the location of containers
-CREATE TABLE IF NOT EXISTS Location (
-	container_id INTEGER,
+CREATE TABLE IF NOT EXISTS Container_Location (
+	container_id INTEGER NOT NULL AUTO_INCREMENT,
+    company VARCHAR(50) NOT NULL,
     dest_sid INTEGER,
     dest_tid INTEGER,
     source_sid INTEGER,
@@ -66,7 +62,6 @@ CREATE TABLE IF NOT EXISTS Location (
     storage_id INTEGER NOT NULL,
     location VARCHAR(12) NOT NULL,
     PRIMARY KEY (container_id),
-    FOREIGN KEY (container_id) REFERENCES Containers(container_id),
 	FOREIGN KEY (dest_sid)     REFERENCES Ships(ship_id),
 	FOREIGN KEY (dest_tid)     REFERENCES Trucks(truck_id),
 	FOREIGN KEY (source_sid)   REFERENCES Ships(ship_id),
@@ -78,14 +73,4 @@ CREATE TABLE IF NOT EXISTS Location (
 		CHECK (dest_sid IS NULL XOR dest_tid IS NULL),
 	CONSTRAINT location
 		CHECK (location IN ('Destination', 'Storage', 'Source'))
-);
-
-# Table for tracking what storage area a truck is at
-CREATE TABLE IF NOT EXISTS Located_At (
-	locating_id INTEGER NOT NULL AUTO_INCREMENT,
-	storage_id INTEGER,
-    truck_id INTEGER,
-    PRIMARY KEY (locating_id),
-    FOREIGN KEY (storage_id) REFERENCES StorageAreas(storage_id),
-    FOREIGN KEY (truck_id) REFERENCES Trucks(truck_id)
 );
