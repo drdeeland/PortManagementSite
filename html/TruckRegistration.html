@@ -1,6 +1,9 @@
+<!DOCTYPE html>
+
 <html>
-    <head>
-        <title>Home Page</title>
+    <head lang="en">
+        <title>Truck Registration Page</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <script type="text/javascript" src="../JavaScript/truckRegistration.js"></script>
         <link href="../css/stylesheet.css" rel="stylesheet">
     </head>
@@ -17,8 +20,18 @@
             <a href="../html/PortAdmin.html">Port Admin</a>
         </div>
         <h1 id="title">Home Page</h1>
-        <div id="">
-
+        <div id="form">
+            <form action="" method="post">
+                <h3>Truck Information</h3>
+                <label for="fname">First Name:</label>
+                <input type="text" id="fname" name="firstname" value="John"><br>
+                <label for="lname">Last Name:</label>
+                <input type="text" id="lname" name="lastname" value="Doe"><br>
+                <label for="tid">Truck ID:</label>
+                <input type="text" id="tid" name="truckid" value="0000"><br>
+                <label for="cnum">Container Number:</label>
+                <input type="text" id="cnum" name="containernum" value="00AA"><br>
+            </form>
         </div>
     </body>
 </html>
