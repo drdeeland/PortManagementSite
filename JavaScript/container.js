@@ -143,6 +143,10 @@ function getContainer() {
         console.log(response);
         let jsonObject = JSON.parse( response );
 
+        if (jsonObject.error != null) {
+          console.log(jsonObject.error);
+        }
+
         for (let i = 0; i < jsonObject.results.length; i++) 
         {
           containerList += jsonObject.results[i];

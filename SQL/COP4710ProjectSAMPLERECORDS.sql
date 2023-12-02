@@ -1,10 +1,5 @@
 USE PortManagement;
 
-INSERT INTO Berths VALUES ();
-INSERT INTO Berths VALUES ();
-
-SELECT * FROM Berths;
-
 INSERT INTO Ships(name) VALUES
 ("Gratitude"),
 ("The Big One"),
@@ -19,6 +14,14 @@ INSERT INTO Ships(name) VALUES
 
 SELECT * FROM Ships;
 
+INSERT INTO Berths(ship_id) VALUES (1);
+INSERT INTO Berths(ship_id) VALUES (2);
+INSERT INTO Berths VALUES ();
+INSERT INTO Berths VALUES ();
+INSERT INTO Berths VALUES ();
+
+SELECT * FROM Berths;
+
 INSERT INTO StorageAreas(capacity, address) VALUES
 (34, "Row A"),
 (36, "Row B"),
@@ -32,12 +35,6 @@ INSERT INTO StorageAreas(capacity, address) VALUES
 (36, "Row J");
 
 SELECT * FROM StorageAreas;
-
-INSERT INTO Docked_At(berth_id, ship_id) VALUES
-(1, 1),
-(2, 2);
-
-SELECT * FROM Docked_At;
 
 INSERT INTO Trucks(license, storage_id) VALUES 
 ('ABC123', 1),

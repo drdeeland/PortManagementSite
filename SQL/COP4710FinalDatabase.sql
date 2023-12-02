@@ -3,12 +3,6 @@ CREATE DATABASE PortManagement;
 USE PortManagement;
 
 # Entity Tables
-# Contains all berths ships can dock at
-CREATE TABLE IF NOT EXISTS Berths (
-	berth_id INTEGER NOT NULL AUTO_INCREMENT,
-	PRIMARY KEY (berth_id)
-);
-
 # Contains all registered ships
 CREATE TABLE IF NOT EXISTS Ships (
 	ship_id INTEGER NOT NULL AUTO_INCREMENT,
@@ -30,12 +24,10 @@ CREATE TABLE IF NOT EXISTS StorageAreas (
 
 # Relational Tables
 # Table for ships docked at berths
-CREATE TABLE IF NOT EXISTS Docked_At (
-	docking_id INTEGER NOT NULL AUTO_INCREMENT,
-	berth_id INTEGER NOT NULL,
-    ship_id INTEGER NOT NULL,
-    PRIMARY KEY (docking_id),
-    FOREIGN KEY (berth_id) REFERENCES Berths(berth_id),
+CREATE TABLE IF NOT EXISTS Berths (
+	berth_id INTEGER NOT NULL AUTO_INCREMENT,
+    ship_id INTEGER,
+    PRIMARY KEY (berth_id),
     FOREIGN KEY (ship_id) REFERENCES Ships(ship_id),
     UNIQUE (berth_id),
     UNIQUE (ship_id)

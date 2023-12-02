@@ -18,90 +18,91 @@
             <a href="../html/PortAdmin.html">Port Admin</a>
         </div>
         <section style="height:70%; min-height:600px;">
+            <br>
             <h1 style="height:30px; text-align: center;" id="title">Company Container Page</h1>
             <div>
-                    <div style="float:left; width:17.5%">
-                        <div style="margin-left: 6%;">
-                            <h2>Create a Container</h2>
-                            <label for="company">Company Name:</label><br>
-                            <input type="text" id="company" name="company">
-                            <br><br>
-                            <label for="sourceid">Source ID:</label><br>
-                            <input type="text" id="sourceid" name="sourceid">
-                            <p>
-                                <input type="radio" id="source1" name="source" Value="true">
-                                <label for="shipSource">Ship</label><br>
-                                <input type="radio" id="source2" name="source" Value="false">
-                                <label for="truckSource">Truck</label>
-                            </p>
-                            <label for="destinationid">Destination ID:</label><br>
-                            <input type="text" id="destinationid" name="destinationid">
-                            <p>
-                                <input type="radio" id="destination1" name="destination" Value="true">
-                                <label for="shipDestination">Ship</label><br>
-                                <input type="radio" id="destination2" name="destination" Value="false">
-                                <label for="truckDestination">Truck</label>
-                            </p>
-                            <label for="storageid">Storage ID:</label><br>
-                            <input type="text" id="storageid" name="storageid"><br><br>
-                            <button type="button" id="createContainerButton" onclick="createContainer();">Create Container</input><br>
-                            <label id="createStatus"></label>
-                        </div>
-                    </div>
-                    <div style="float:left; width:17.5%">
-                        <div style="margin-left: 6%;">
-                            <h2>Update a Container</h2>
-                            <label for="containerid">Container ID</label><br>
-                            <input type="text" id="containerid" name="containerid">
-                            <br><br>
-                            <label for="sourceidUpdate">Source ID:</label><br>
-                            <input type="text" id="sourceidUpdate" name="sourceid">
-                            <p>
-                                <input type="radio" id="source1Update" name="sourceUpdate" Value="true">
-                                <label for="shipSource">Ship</label><br>
-                                <input type="radio" id="source2Update" name="sourceUpdate" Value="false">
-                                <label for="truckSource">Truck</label>
-                            </p>
-                            <label for="destinationidUpdate">Destination ID:</label><br>
-                            <input type="text" id="destinationidUpdate" name="destinationid">
-                            <p>
-                                <input type="radio" id="destination1Update" name="destinationUpdate" Value="true">
-                                <label for="shipDestination">Ship</label><br>
-                                <input type="radio" id="destination2Update" name="destinationUpdate" Value="false">
-                                <label for="truckDestination">Truck</label>
-                            </p>
-                            <label for="storageidUpdate">Storage ID:</label><br>
-                            <input type="text" id="storageidUpdate" name="storageid"><br><br>
-                            <button type="button" id="updateContainerButton" onclick="updateContainer();">Update Container</input><br>
-                            <label id="updateStatus"></label>
-                        </div>
-                    </div>
-                    <div style="float:left; width:17.5%">
-                        <div style="margin-left: 6%;">
-                            <h2>Delete a Container</h2>
-                            <label for="containeridDelete">Container ID</label><br>
-                            <input type="text" id="containeridDelete" name="containerid">
-                            <br><br>
-                            <button type="button" id="deleteContainerButton" onclick="deleteContainer();">Delete Container</input><br>
-                            <label id="deleteStatus"></label>
-                        </div>
-                    </div>
-                    <div style="float:left; width:37.5%; margin-left:3%; margin-right:6%">
-                        <h2>View Company Containers</h2>
-                        <label for="display; text-align:left">Enter company name to see their containers</label><br>
-                        <input type="text" id="companyName" name="companyName">
-                        <button type="button" id="getButton" onclick="getContainer();">Submit</button>
+                <div style="float:left; width:17.5%">
+                    <div style="margin-left: 6%;">
+                        <h2>Create a Container</h2>
+                        <label for="company">Company Name:</label><br>
+                        <input type="text" id="company" name="company">
                         <br><br>
-                        <table id="containers">
-                            <tr>
-                                <th>Container ID</th>
-                                <th>Source ID</th>
-                                <th>Storage ID</th>
-                                <th>Destination ID</th>
-                                <th>Status</th>
-                            </tr>
-                        </table>
+                        <label for="sourceid">Source ID:</label><br>
+                        <input type="text" id="sourceid" name="sourceid">
+                        <p>
+                            <input type="radio" id="source1" name="source" Value="true">
+                            <label for="shipSource">Ship</label><br>
+                            <input type="radio" id="source2" name="source" Value="false">
+                            <label for="truckSource">Truck</label>
+                        </p>
+                        <label for="destinationid">Destination ID:</label><br>
+                        <input type="text" id="destinationid" name="destinationid">
+                        <p>
+                            <input type="radio" id="destination1" name="destination" Value="true">
+                            <label for="shipDestination">Ship</label><br>
+                            <input type="radio" id="destination2" name="destination" Value="false">
+                            <label for="truckDestination">Truck</label>
+                        </p>
+                        <label for="storageid">Storage ID:</label><br>
+                        <input type="text" id="storageid" name="storageid"><br><br>
+                        <button type="button" id="createContainerButton" onclick="createContainer();">Create Container</input><br>
+                        <label id="createStatus"></label>
                     </div>
+                </div>
+                <div style="float:left; width:17.5%">
+                    <div style="margin-left: 6%;">
+                        <h2>Update a Container</h2>
+                        <label for="containerid">Container ID</label><br>
+                        <input type="text" id="containerid" name="containerid">
+                        <br><br>
+                        <label for="sourceidUpdate">Source ID:</label><br>
+                        <input type="text" id="sourceidUpdate" name="sourceid">
+                        <p>
+                            <input type="radio" id="source1Update" name="sourceUpdate" Value="true">
+                            <label for="shipSource">Ship</label><br>
+                            <input type="radio" id="source2Update" name="sourceUpdate" Value="false">
+                            <label for="truckSource">Truck</label>
+                        </p>
+                        <label for="destinationidUpdate">Destination ID:</label><br>
+                        <input type="text" id="destinationidUpdate" name="destinationid">
+                        <p>
+                            <input type="radio" id="destination1Update" name="destinationUpdate" Value="true">
+                            <label for="shipDestination">Ship</label><br>
+                            <input type="radio" id="destination2Update" name="destinationUpdate" Value="false">
+                            <label for="truckDestination">Truck</label>
+                        </p>
+                        <label for="storageidUpdate">Storage ID:</label><br>
+                        <input type="text" id="storageidUpdate" name="storageid"><br><br>
+                        <button type="button" id="updateContainerButton" onclick="updateContainer();">Update Container</input><br>
+                        <label id="updateStatus"></label>
+                    </div>
+                </div>
+                <div style="float:left; width:17.5%">
+                    <div style="margin-left: 6%;">
+                        <h2>Delete a Container</h2>
+                        <label for="containeridDelete">Container ID</label><br>
+                        <input type="text" id="containeridDelete" name="containerid">
+                        <br><br>
+                        <button type="button" id="deleteContainerButton" onclick="deleteContainer();">Delete Container</input><br>
+                        <label id="deleteStatus"></label>
+                    </div>
+                </div>
+                <div style="float:left; width:37.5%; margin-left:3%; margin-right:6%">
+                    <h2>View Company Containers</h2>
+                    <label for="display; text-align:left">Enter company name to see their containers</label><br>
+                    <input type="text" id="companyName" name="companyName">
+                    <button type="button" id="getButton" onclick="getContainer();">Submit</button>
+                    <br><br>
+                    <table id="containers">
+                        <tr>
+                            <th>Container ID</th>
+                            <th>Source ID</th>
+                            <th>Storage ID</th>
+                            <th>Destination ID</th>
+                            <th>Status</th>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </section>
     </body>
