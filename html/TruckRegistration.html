@@ -1,6 +1,10 @@
+<!DOCTYPE html>
+
 <html>
-    <head>
-        <title>Home Page</title>
+    <head lang="en">
+        <title>Truck Registration Page</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <script type='text/javascript' src="../JavaScript/const.js"></script>
         <script type="text/javascript" src="../JavaScript/truckRegistration.js"></script>
         <link href="../css/stylesheet.css" rel="stylesheet">
     </head>
@@ -16,9 +20,13 @@
             <a href="../html/Container.html">Containers</a>
             <a href="../html/PortAdmin.html">Port Admin</a>
         </div>
-        <h1 id="title">Home Page</h1>
-        <div id="">
-
-        </div>
+        <section id="truck_info">
+            <h1 id="title">Enter Truck ID</h1>
+            <div class="tid_info">
+                <label for="tid">Truck ID:</label><br>
+                <input type="text" id="tid" name="truckid"><br><br>
+                <button type="button" id="loadLocationButton" onclick="getDirection();">Check_In</input><br>
+            </div>
+        </section>
     </body>
 </html>

@@ -34,6 +34,7 @@ body {
 h1 {
   height:30px;
   font-size: 27px;
+  text-align: center;
 }
 
 section {
@@ -51,4 +52,19 @@ table {
 td, th {
     border: 1px solid #333;
     text-align: center;
+}
+
+/* Truck Registration CSS */
+
+#truck_info {
+  background-color:#fcfcfc;
+  border-radius: 10px;
+  margin:auto;
+  width: 40%;
+}
+
+.tid_info {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
