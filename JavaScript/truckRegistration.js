@@ -6,7 +6,7 @@ function getTruckId() {
 
     console.log("truck_id: " + truck);
 
-    let truckTable = "<tr><th>License Plate</th><th>Storage ID</th><th>Address</th></tr>";
+    let directionTable = "<tr><th>Read Directions</th><th>Address</th></tr>";
 
     let tmp = {"truck_id":truck};
     let jsonPayload = JSON.stringify( tmp );
@@ -21,32 +21,31 @@ function getTruckId() {
 
     let result;
 
-    // try 
-    // {
-    //     xhr.onreadystatechange = function() {
-    //         if (this.readyState == 4 && this.status == 200) {
-    //             let response = xhr.responseText;
-    //             console.log(response);
-    //             let jsonObject = JSON.parse( response );
+    /*Add check if location is applicable */
+    try 
+    {
+        xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                let response = xhr.responseText;
+                console.log(response);
+                let jsonObject = JSON.parse( response );
 
-    //             truckTable += "<tr><td>" + jsonObject.results[0]["license"] + "</td>";
+                directionTable += "<tr><td>Load this container from the specified location</td>";
 
-    //             truckTable += "<td>Storage: " + jsonObject.results[0]["storage_id"] + "</td>";
-                
-    //             truckTable += "<td>" + jsonObject.results[0]["address"] + "</td></tr>";
+                directionTable += "<td>" + jsonObject.results[0]["address"] + "</td></tr>";
 
-    //             document.getElementById("truckInfo").innerHTML = truckTable;
-    //         }
-    //     };
-    //     xhr.send(jsonPayload);
-    // }
-    // catch (err) 
-    // {
-    //     console.log(err);
-    //     return null;
-    // }
+                document.getElementById("location").innerHTML = directionTable;
+            }
+        };
+        xhr.send(jsonPayload);
+    }
+    catch (err) 
+    {
+        console.log(err);
+        return null;
+    }
 
-    // return result;
+    return result;
 }
 
 function getDirection() {

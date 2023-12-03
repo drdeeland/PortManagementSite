@@ -56,6 +56,12 @@ td, th {
 
 /* Truck Registration CSS */
 
+.loc_ctn {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
 #truck_info {
   background-color:#fcfcfc;
   border-radius: 10px;
