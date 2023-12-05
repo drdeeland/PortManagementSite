@@ -2,9 +2,7 @@ const urlBase = CONSTANT.urlBase;
 const extension = CONSTANT.extension;
 
 // Global Variable for checking
-var tLicense = [];
-
-function createTruck() {
+async function createTruck() {
     console.log("create func");
 
     let license = document.getElementById("license").value;
@@ -16,22 +14,7 @@ function createTruck() {
     let result;
     
     // Checks if the truck is registered already
-    isTruckRegisted(license);
-    console.log(tLicense[0]);
-    if (tLicense[0]) {
-        message = "<b>This truck is already registered.</b>"
-        document.getElementById("message").innerHTML
-
-        return result;
-    }
-
-    // Checks if there are none or only one input
-    if (license == "") {
-        message = "<b>Field is missing input.</b>";
-        document.getElementById("message").innerHTML += message;
-
-        return result
-    }
+    await isTruckRegistered(license);
 
     let tmp = {license, storage_id:Number(storageID)};
 
@@ -49,10 +32,7 @@ function createTruck() {
         xhr.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
             let response = xhr.responseText;
-            console.log(response);
-    
-            // message = "<b>Truck sucessfully registered. Enter through Row A</b>"
-            // document.getElementById("message").innerHTML = message;
+            console.log("Insertion:", response);
           }
       };
     
@@ -65,7 +45,7 @@ function createTruck() {
     return result;
 }
 
-function isTruckRegisted(license) {
+function isTruckRegistered(license) {
     let message = "";
 
     let tmp = {"license":license};
@@ -79,24 +59,24 @@ function isTruckRegisted(license) {
 
     console.log("request prepped:" + jsonPayload);
 
+    let result;
+
     try 
     {
         xhr.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 let response = xhr.responseText;
-                console.log(response);
+                console.log("License check:", response);
                 
                 let jsonObject = JSON.parse( response );
 
-                let truckLicense = jsonObject.results[0]["license"];
-
-                if (license == truckLicense) {
-                    tLicense.push(true);
+                if (jsonObject["error"] == "No Trucks Found") {
+                    message = "<b>Truck sucessfully registered. Enter through Row A</b>"
+                } else {
                     message = "<b>This truck is already registered.</b>"
-                    document.getElementById("message").innerHTML
                 }
-                else
-                    tLicense.push(false);
+
+                document.getElementById("message").innerHTML = message;
             }
         };
         xhr.send(jsonPayload);
@@ -107,7 +87,5 @@ function isTruckRegisted(license) {
         return null;
     }
 
-    console.log(tLicense);
-
-    return tLicense;
+    return result;
 }
