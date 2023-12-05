@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>Port Exit Page</title>
+        <script type='text/javascript' src="../JavaScript/const.js"></script>
         <script type="text/javascript" src="../JavaScript/portExit.js"></script>
         <link href="../css/stylesheet.css" rel="stylesheet">
     </head>
@@ -16,9 +17,17 @@
             <a href="../html/Container.html">Containers</a>
             <a href="../html/PortAdmin.html">Port Admin</a>
         </div>
-        <h1 id="title">Port Exit Page</h1>
-        <div id="">
-
-        </div>
+        <section style="height:30%; min-height:200px;">
+            <!-- Purpose: Signify ship departures and free up berths. -->
+            <h1 id="title">Port Exit Page</h1>
+            <div style="display: flex; justify-content: center; align-items: flex-start;">
+                <!-- Enter Ship ID: Captains input ship's ID.
+                 Free Berth: System recognizes departure, making the berth available for other ships. -->
+                <label for="sid">Ship ID:</label><br>
+                <input type="text" id="sid" name="shipid"><br><br>
+                <button type="button" id="shipLeaveButton" onclick="setShipDeparture();">Depart</button>
+            </div>
+            <div id="leaveBerthMessage" hidden></div>
+        </section>
     </body>
 </html>

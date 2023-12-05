@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>Crane Operation Page</title>
+        <script type='text/javascript' src="../JavaScript/const.js"></script>
         <script type="text/javascript" src="../JavaScript/craneOperation.js"></script>
         <link href="../css/stylesheet.css" rel="stylesheet">
     </head>
@@ -16,9 +17,50 @@
             <a href="../html/Container.html">Containers</a>
             <a href="../html/PortAdmin.html">Port Admin</a>
         </div>
+		<section style="height:50%; min-height:100px;">	
         <h1 id="title">Crane Operation Page</h1>
         <div id="">
-
-        </div>
+		<!-- Purpose: Facilitate crane operations for loading and unloading containers. -->
+		<!-- Steps: -->
+		<!--  ID Input: Crane operator enters either ship or truck ID. -->
+		
+			<div style="float:left; margin-left: 6%;">
+				<h2>Update Container Status</h2>
+				<label for="sourceid">Source ID:</label><br>
+				<input type="text" id="sourceid" name="sourceid">
+				<p>
+					<input type="radio" id="source1" name="source" Value="true">
+					<label for="shipSource">Ship</label><br>
+					<input type="radio" id="source2" name="source" Value="false">
+					<label for="truckSource">Truck</label>
+				</p>
+				<!-- <label>Set Status: </label>
+				<p>
+					<input type="radio" id="storageOpt" name="toStorage" Value="true">
+					<label for="toStorage">Storage</label> <br>
+					<input type="radio" id="destOpt" name="toDest" value="false">
+					<label for="toDest">Destination</label>
+				</p> -->
+				<!-- <label for="getButton" id="craneInput">Grab Container</label> -->
+				<button type="button" id="getButton" onclick="getSourceContainers();">Submit</button><br>
+				<button type="button" id="getButton" onclick="setContainerStatus();">Move Containers</button><br>
+			</div>
+		<!--  View Container Details: System displays each container's details that are to be loaded or unloaded (from the ship or truck) and their storage location. -->
+			<div style="float:left;  width:37.5%; margin-left:3%; margin-right:6%" >
+				<h2>View Container Details</h2>			
+				<br>
+				<table id="containers">
+					<tr>
+						<th>Container ID</th>
+						<th>Source ID</th>
+						<th>Storage ID</th>
+						<th>Destination ID</th>
+						<th>Status</th>
+					</tr>
+				</table>
+			</div>
+		<!--  Update Container Status: The containers’ status in the system is automatically updated. -->
+			
+		</section>
     </body>
 </html>
