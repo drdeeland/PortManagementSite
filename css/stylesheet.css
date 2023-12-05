@@ -75,7 +75,8 @@ margin-bottom: 4%;
 }
 
 #message {
-text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 /* Truck Driver CSS */

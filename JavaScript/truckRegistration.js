@@ -1,7 +1,6 @@
 const urlBase = CONSTANT.urlBase;
 const extension = CONSTANT.extension;
 
-// Global Variable for checking
 async function createTruck() {
     console.log("create func");
 
@@ -13,8 +12,14 @@ async function createTruck() {
 
     let result;
     
+    if (license == "") {
+        message = "<b>Field is missing input.</b>";
+        document.getElementById("message").innerHTML += message;
+        return result
+    }
     // Checks if the truck is registered already
     await isTruckRegistered(license);
+
 
     let tmp = {license, storage_id:Number(storageID)};
 
@@ -71,9 +76,11 @@ function isTruckRegistered(license) {
                 let jsonObject = JSON.parse( response );
 
                 if (jsonObject["error"] == "No Trucks Found") {
-                    message = "<b>Truck sucessfully registered. Enter through Row A</b>"
-                } else {
-                    message = "<b>This truck is already registered.</b>"
+                    message = "<b>Truck sucessfully registered. Enter through Row A</b>";
+                    document.getElementById("message").innerHTML = message;
+                }
+                else {
+                    message = "<b>This truck is already registered.</b>";
                 }
 
                 document.getElementById("message").innerHTML = message;
