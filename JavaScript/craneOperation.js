@@ -49,7 +49,7 @@ function setContainerStatus(){
 function getSourceContainers() {
     // console.log("retrieve func");
 
-    let id = document.getElementById("sourceid");
+    let id = document.getElementById("sourceid").value;
     let isShip;
   
     if (document.getElementById('source1').checked) {
@@ -61,8 +61,10 @@ function getSourceContainers() {
     let containerList = "";
     let containerTable = "<tr><th>Container ID</th><th>Company</th><th>Source ID</th><th>Storage ID</th><th>Destination ID</th><th>Status</th></tr>";
   
-      tmp = {sourceId:id, isShip:isShip};
+    tmp = {sourceId:id, isShip:isShip};
     let jsonPayload = JSON.stringify( tmp );
+
+    console.log(jsonPayload);
     
     let url = urlBase + '/getSourceContainers' + extension;
   
