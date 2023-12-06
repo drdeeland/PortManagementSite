@@ -50,16 +50,16 @@ function getSourceContainers() {
     let id = document.getElementById("sourceid");
     let isShip;
   
-    if (document.getElementById('destination1').checked) {
+    if (document.getElementById('source1').checked) {
       isShip = true;
-    } else if (document.getElementById('destination2').checked) {
+    } else if (document.getElementById('source2').checked) {
       isShip = false;
     }
   
     let containerList = "";
     let containerTable = "<tr><th>Container ID</th><th>Company</th><th>Source ID</th><th>Storage ID</th><th>Destination ID</th><th>Status</th></tr>";
   
-      tmp = {sourceId:id, isShip};
+      tmp = {sourceId:id, isShip:isShip};
     let jsonPayload = JSON.stringify( tmp );
     
     let url = urlBase + '/getSourceContainers' + extension;

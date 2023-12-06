@@ -11,7 +11,7 @@ if ($conn->connect_error) {
 }
 else {
     $stmt = $conn->prepare("UPDATE berths SET ship_id=null WHERE ship_id=(?)");
-    $stmt->bind_param("s", $shipId);
+    $stmt->bind_param("i", $shipId);
     $stmt->execute();
 
     
