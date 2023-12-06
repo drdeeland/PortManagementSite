@@ -47,7 +47,7 @@ async function createShip() {
 function isShipRegistered(shipName) {
     let message = "";
 
-    let tmp = {"name":shipName};
+    let tmp = {"shipName":shipName};
     let jsonPayload = JSON.stringify( tmp );
 
     let url = urlBase + '/getShip' + extension;
@@ -69,10 +69,10 @@ function isShipRegistered(shipName) {
                 
                 let jsonObject = JSON.parse( response );
 
-                if (jsonObject["error"] == "No Trucks Found") {
-                    message = "<b>Truck sucessfully registered. Enter through Row A</b>"
+                if (jsonObject["error"] == "No Ships Found") {
+                    message = "<b>Ship sucessfully registered. Enter a port on the Port Entry page</b>"
                 } else {
-                    message = "<b>This truck is already registered.</b>"
+                    message = "<b>This ship is already registered.</b>"
                 }
 
                 document.getElementById("message").innerHTML = message;

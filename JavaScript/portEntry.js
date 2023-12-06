@@ -6,6 +6,7 @@ async function createPortEntry() {
     console.log("create func");
 
     let shipId = document.getElementById("shipId").value;
+    let berthId = document.getElementById("berthID").value;
 
     let message = "";
     document.getElementById("message").innerHTML = message;
@@ -14,7 +15,7 @@ async function createPortEntry() {
     
     // Checks if the truck is registered already
 
-    let tmp = {shipId};
+    let tmp = {"shipId":shipId, "berthId":berthId};
 
     let jsonPayload = JSON.stringify(tmp);
 

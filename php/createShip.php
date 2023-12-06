@@ -1,7 +1,7 @@
 <?php
     $inData = getRequestInfo();
 
-    $name = $inData["name"];
+    $name = $inData["shipName"];
 
     $conn = new mysqli("localhost","db","pass","portmanagement");
 
@@ -9,8 +9,8 @@
         die("Connection failed: " . $conn->connect_error);
     }
     else {
-        $stmt = $conn->prepare("INSERT INTO Ships (name) VALUES (?,?)");
-        $stmt->bind_param("n", $name);
+        $stmt = $conn->prepare("INSERT INTO Ships (name) VALUES (?)");
+        $stmt->bind_param("s", $name);
 
         $stmt->execute();
 

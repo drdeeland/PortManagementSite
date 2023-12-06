@@ -2,6 +2,7 @@
     $inData = getRequestInfo();
 
     $shipId = $inData["shipId"];
+    $berthId = $inData["berthId"];
 
     $conn = new mysqli("localhost","db","pass","portmanagement");
 
@@ -9,8 +10,8 @@
         die("Connection failed: " . $conn->connect_error);
     }
     else {
-        $stmt = $conn->prepare("INSERT INTO Berths (ship_id) VALUES (?)");
-        $stmt->bind_param("i", $shipId);
+        $stmt = $conn->prepare("UPDATE Berths B SET B.ship_id=(?) WHERE B.berth_id=(?)");
+        $stmt->bind_param("ii", $shipId, $berthId);
 
         $stmt->execute();
 

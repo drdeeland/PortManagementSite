@@ -119,3 +119,15 @@ justify-content: center;
   margin-left: 4%;
   margin-right: 4%;
 }
+
+.createShipButton div {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  }
+  
+.createPortEntryButton div {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}

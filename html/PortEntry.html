@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>Port Entry Page</title>
+        <script type="text/javascript" src="../JavaScript/const.js"></script>
         <script type="text/javascript" src="../JavaScript/portEntry.js"></script>
         <link href="../css/stylesheet.css" rel="stylesheet">
     </head>
@@ -22,11 +23,13 @@
                 <div class="plate">
                     <label for="shipId">Enter Ship Id:</label>
                     <input type="text" id="shipId" name="ship_id"><br><br>
+                    <label for="name">Enter Berth Id:</label>
+                    <input type="text" id="berthID" name="berthID"><br><br>
                 </div>
             </div>
             <div class="createPortEntryButton">
                 <div>
-                    <button type="button" id="createPortEntryButton" onclick="createShip();">Register</button><br>
+                    <button script="text-align:center" type="button" id="createPortEntryButton" onclick="createPortEntry();">Register</button><br>
                 </div>
             </div>
             <label id="message"></label>

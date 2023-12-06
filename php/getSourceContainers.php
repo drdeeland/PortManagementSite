@@ -14,11 +14,11 @@ if ($conn->connect_error) {
 }
 else {
     if($isShip){
-        $stmt = $conn->prepare("SELECT * FROM Container_Location CL ORDER BY CL.location WHERE (CL.location = 'Storage' AND CL.dest_sid = (?)) OR (CL.location = 'Source' OR CL.source_sid = (?)");
-        $stmt->bind_param("ss", $sourceID, $sourceID);
+        $stmt = $conn->prepare("SELECT * FROM Container_Location CL WHERE (CL.location = 'Storage' AND CL.dest_sid = (?)) OR (CL.location = 'Source' OR CL.source_sid = (?)) ORDER BY CL.location");
+        $stmt->bind_param("ii", $sourceID, $sourceID);
     } else{
-        $stmt = $conn->prepare("SELECT * FROM Container_Location CL ORDER BY CL.location WHERE (CL.location = 'Storage' AND CL.dest_tid = (?)) OR (CL.location = 'Source' OR CL.source_tid = (?)");
-        $stmt->bind_param("ss", $sourceID, $sourceID);
+        $stmt = $conn->prepare("SELECT * FROM Container_Location CL WHERE (CL.location = 'Storage' AND CL.dest_tid = (?)) OR (CL.location = 'Source' OR CL.source_tid = (?)) ORDER BY CL.location");
+        $stmt->bind_param("ii", $sourceID, $sourceID);
     }
     
     $stmt->execute();
@@ -31,7 +31,7 @@ else {
             $searchResults .= ",";
         }
         $searchCount++;
-        $searchResults .= '{"container_id":'.$row["container_id"].', "company":"'.$row[$company].'", "dest_sid":"'.$row["dest_sid"].'", "dest_tid":"'.$row["dest_tid"].'", 
+        $searchResults .= '{"container_id":'.$row["container_id"].', "company":"'.$row["company"].'", "dest_sid":"'.$row["dest_sid"].'", "dest_tid":"'.$row["dest_tid"].'", 
         "source_sid":"'.$row["source_sid"].'", "source_tid":"'.$row["source_tid"].'", "storage_id":'.$row["storage_id"].', "location":"'.$row["location"].'"}';
     }
 
