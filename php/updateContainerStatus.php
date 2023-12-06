@@ -16,17 +16,17 @@ if ($conn->connect_error) {
 else {
     if($isShip){
         $stmt = $conn->prepare("UPDATE Container_Location SET location='Destination' WHERE (location='Storage' AND dest_sid=(?))");
-        $stmt->bind_param("s", $sourceID);
+        $stmt->bind_param("i", $sourceID);
         $stmt->execute();
         $stmt = $conn->prepare("UPDATE Container_Location SET location='Storage' WHERE (location='Source' AND source_sid=(?))");
-        $stmt->bind_param("s", $sourceID);
+        $stmt->bind_param("i", $sourceID);
         $stmt->execute();
     } else{
         $stmt = $conn->prepare("UPDATE Container_Location SET location='Destination' WHERE (location='Storage' AND dest_sid=(?))");
-        $stmt->bind_param("s", $sourceID);
+        $stmt->bind_param("i", $sourceID);
         $stmt->execute();
         $stmt = $conn->prepare("UPDATE Container_Location SET location='Storage' WHERE (location='Source' AND source_sid=(?))");
-        $stmt->bind_param("s", $sourceID);
+        $stmt->bind_param("i", $sourceID);
         $stmt->execute();
     }
     
