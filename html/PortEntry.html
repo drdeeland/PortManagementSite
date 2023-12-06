@@ -16,9 +16,20 @@
             <a href="../html/Container.html">Containers</a>
             <a href="../html/PortAdmin.html">Port Admin</a>
         </div>
-        <h1 id="title">Port Entry Page</h1>
-        <div id="">
-
-        </div>
+        <section id="Port_Entry_info">
+            <h1>Port Entry</h1>
+            <div class="t_form">
+                <div class="plate">
+                    <label for="shipId">Enter Ship Id:</label>
+                    <input type="text" id="shipId" name="ship_id"><br><br>
+                </div>
+            </div>
+            <div class="createPortEntryButton">
+                <div>
+                    <button type="button" id="createPortEntryButton" onclick="createShip();">Register</button><br>
+                </div>
+            </div>
+            <label id="message"></label>
+        </section>
     </body>
 </html>

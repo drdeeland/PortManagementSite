@@ -16,9 +16,20 @@
             <a href="../html/Container.html">Containers</a>
             <a href="../html/PortAdmin.html">Port Admin</a>
         </div>
-        <h1 id="title">Ship Registration Page</h1>
-        <div id="">
-
-        </div>
+        <section id="Ship_info">
+            <h1>Ship Registration</h1>
+            <div class="t_form">
+                <div class="plate">
+                    <label for="license">Enter Ship Name:</label>
+                    <input type="text" id="shipName" name="ship_name"><br><br>
+                </div>
+            </div>
+            <div class="createShipButton">
+                <div>
+                    <button type="button" id="createShipButton" onclick="createShip();">Register</button><br>
+                </div>
+            </div>
+            <label id="message"></label>
+        </section>
     </body>
 </html>
