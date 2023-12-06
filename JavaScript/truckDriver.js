@@ -13,6 +13,7 @@ function getTruckInfo() {
 
     let url = urlBase + '/getTruckInfo' + extension;
 
+    // Contacts the api to retrieve data from the database
     let xhr = new XMLHttpRequest();
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
@@ -21,6 +22,7 @@ function getTruckInfo() {
 
     let result;
 
+    // Request is sent and checks if it was successful
     try 
     {
         xhr.onreadystatechange = function() {
@@ -28,6 +30,7 @@ function getTruckInfo() {
                 let response = xhr.responseText;
                 console.log(response);
 
+                // The retrieved data sent as a JSON
                 let jsonObject = JSON.parse( response );
 
                 let containers;
