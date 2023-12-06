@@ -2,7 +2,7 @@ const urlBase = CONSTANT.urlBase;
 const extension = CONSTANT.extension;
 
 // Global Variable for checking
-async function createTruck() {
+async function createShip() {
     console.log("create func");
 
     let shipName = document.getElementById("shipName").value;
@@ -13,9 +13,9 @@ async function createTruck() {
     let result;
     
     // Checks if the truck is registered already
-    await isTruckRegistered(shipName);
+    await isShipRegistered(shipName);
 
-    let tmp = {license};
+    let tmp = {shipName};
 
     let jsonPayload = JSON.stringify(tmp);
 
@@ -44,7 +44,7 @@ async function createTruck() {
     return result;
 }
 
-function isTruckRegistered(shipName) {
+function isShipRegistered(shipName) {
     let message = "";
 
     let tmp = {"name":shipName};
