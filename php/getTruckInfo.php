@@ -1,19 +1,18 @@
 <?php
     $inData = getRequestInfo();
 
-    $truck_id = $inData["truck_id"];
+    $license = $inData["license"];
 
     $searchCount = 0;
 
     $conn = new mysqli("localhost","db","pass","portmanagement");
 
-    // Need to add query SELECT S.address FROM storeageareas S WHERE S.storage_id=storage_id
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
     else {
-        $stmt = $conn->prepare("SELECT * FROM Container_Location CL WHERE CL.dest_tid = (?) OR CL.source_tid = (?)");
-        $stmt->bind_param("ii", $truck_id,  $inData["truck_id"]);
+        $stmt = $conn->prepare("SELECT * FROM Trucks T, Container_Location CL, storageareas S WHERE T.license = (?) AND (T.truck_id = CL.dest_tid OR T.truck_id = CL.source_tid) AND (CL.storage_id = S.storage_id)");
+        $stmt->bind_param("s", $inData["license"]);
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -21,13 +20,13 @@
 
         while ( $row = $result->fetch_assoc() ) {
             $searchResults[$searchCount] = array(
+                "license" => $row["license"],
                 "company" => $row["company"],
-                "dest_sid" => $row["dest_sid"],
                 "dest_tid" => $row["dest_tid"],
-                "source_sid" => $row["source_sid"],
-                "source_tid" => $row["source_tid"],
+                "source_tid" => $row["source_tid"], 
+                "location" => $row["location"],
                 "storage_id" => $row["storage_id"],
-                "location" => $row["location"]
+                "address" => $row["address"]
             );
             
             $searchCount++;

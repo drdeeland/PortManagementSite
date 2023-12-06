@@ -21,17 +21,26 @@
             <a href="../html/PortAdmin.html">Port Admin</a>
         </div>
         <section id="truck_info">
-            <h1 id="title">Enter Truck ID</h1>
+            <h1 id="title">Container Locations</h1>
+            <p id="explanation">Drivers must enter license plate number to receive location of containers</p>
             <div class="tid_info">
-                <label for="tid">Truck ID:</label><br>
-                <input type="text" id="tid" name="truckid"><br><br>
+                <div class="license_input">
+                    <label for="license">Enter License Number:</label>
+                    <input type="text" id="license" name="license"><br><br>
+                </div>
+            </div>
+            <div class="get_location_button">
                 <button type="button" id="loadLocationButton" onclick="getDirection();">Check_In</input><br>
-                <!--May change this since it is slow  -->
-                <input type="text" id="address" hidden>
             </div>
             <div class="loc_ctn">
-                <table id="location">
-                </table>
+                <div>
+                    <table id="location">
+                        <tr>
+                            <th>Read Directions</th>
+                            <th>Address</th>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </section>
     </body>
