@@ -3,7 +3,6 @@ $inData = getRequestInfo();
 
 $sourceID = $inData["sourceId"];
 $isShip = $inData["isShip"];
-$location = $inData["location"];
 
 $searchResults = "";
 $searchCount = 0;

@@ -7,7 +7,7 @@ function setShipDeparture(){
         // Implement a queuing system. If berths are full and ships attempt to check in, the system should 
         // add them to a queue. This queue should automatically update when a berth becomes available. 
 
-    let shipId = document.getElementById("sid");
+    let shipId = document.getElementById("shipid").value;
     // if (queue exists){
     //     let queuedship = "";
     // }
