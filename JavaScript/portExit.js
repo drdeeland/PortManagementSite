@@ -12,7 +12,7 @@ function setShipDeparture(){
     //     let queuedship = "";
     // }
 
-    let tmp = {"ship_id":id};
+    let tmp = {"ship_id":shipid};
     let jsonPayload = JSON.stringify( tmp );
 
     let url = urlBase + '/leaveBerth' + extension;
