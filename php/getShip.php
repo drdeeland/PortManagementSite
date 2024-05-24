@@ -1,7 +1,7 @@
 <?php
 $inData = getRequestInfo();
 
-$shipName = $inData["shipName"];
+$ship_id = $inData["ship_id"];
 
 $searchResults = "";
 $searchCount = 0;
@@ -12,8 +12,8 @@ if ($conn->connect_error) {
 	die("Connection failed: " . $conn->connect_error);
 }
 else {
-    $stmt = $conn->prepare("SELECT * FROM Ships S WHERE S.name = (?)");
-    $stmt->bind_param("s", $shipName);
+    $stmt = $conn->prepare("SELECT * FROM Ships S WHERE S.ship_id = (?)");
+    $stmt->bind_param("s", $ship_id);
     $stmt->execute();
     $result = $stmt->get_result();
 
